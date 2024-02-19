@@ -1,0 +1,17 @@
+{
+  "name": "showdown-tournament",
+  "version": "1.0.0",
+  "description": "Site for Pokémon Showdown! - Future Nostalgia v1.0 W24 Tournament...",
+  "main": "page-script.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simcard0000/showdown-tournament.git"
+  },
+  "author": "Simran Thind (@simcard0000)",
+  "homepage": "https://github.com/simcard0000/showdown-tournament#readme",
+  "dependencies": {
+    "brackets-manager": "^1.6.4",
+    "brackets-memory-db": "^1.0.4",
+    "browserify": "^17.0.0"
+  }
+}
