@@ -7884,7 +7884,7 @@ exports.default = _default;
 // NPM packages bundled with Browserify to use in the front-end
 
 const { InMemoryDatabase } = require('brackets-memory-db');
-const { BracketsManager, StageCreator } = require('brackets-manager');
+const { BracketsManager } = require('brackets-manager');
 
 const storage = new InMemoryDatabase();
 const manager = new BracketsManager(storage, true);
@@ -7894,12 +7894,7 @@ async function populateBracket() {
         name: 'Pokémon Showdown! - Future Nostalgia v1.0 W24 Tournament',
         tournamentId: 0,
         type: 'double_elimination',
-        seeding: ['Team 1', 'Team 2', 'Team 3', 'Team 4'],
-    });
-    await manager.update.match({
-        id: 0, // First match of winner bracket (round 1)
-        opponent1: { score: 16, result: 'win' },
-        opponent2: { score: 12 },
+        seeding: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'],
     });
     let data = await manager.get.tournamentData(0);
 
