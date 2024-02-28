@@ -7887,7 +7887,7 @@ const { InMemoryDatabase } = require('brackets-memory-db');
 const { BracketsManager } = require('brackets-manager');
 
 const storage = new InMemoryDatabase();
-const manager = new BracketsManager(storage, true);
+const manager = new BracketsManager(storage);
 
 // populateBracket() will be called when the page/body loads... 
 async function populateBracket() {
