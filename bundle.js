@@ -7881,7 +7881,7 @@ function version(uuid) {
 var _default = version;
 exports.default = _default;
 },{"./validate.js":38}],40:[function(require,module,exports){
-// NPM packages bundled with Browserify to use in the front-end
+// NPM packages bundled with Browserify to use in the front-end!
 
 const { InMemoryDatabase } = require('brackets-memory-db');
 const { BracketsManager } = require('brackets-manager');
@@ -7889,15 +7889,17 @@ const { BracketsManager } = require('brackets-manager');
 const storage = new InMemoryDatabase();
 const manager = new BracketsManager(storage, true);
 
+// populateBracket() will be called when the page/body loads... 
 async function populateBracket() {
+    // Creating tournament stage (everything is stored in local storage):
     await manager.create.stage({
-        name: 'Pokémon Showdown! - Future Nostalgia v1.0 W24 Tournament',
+        name: 'Bracket v1.0',
         tournamentId: 0,
         type: 'double_elimination',
         seeding: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'],
     });
+    // Rendering tournament bracket:
     let data = await manager.get.tournamentData(0);
-
     window.bracketsViewer.render({
         stages: data.stage,
         matches: data.match,
@@ -7908,6 +7910,7 @@ async function populateBracket() {
     });
 }
 
+// Exporting functions so that they can be called in the HTML:
 module.exports = { 'populateBracket': populateBracket }
 
 
